@@ -8,7 +8,7 @@ function Taskinput() {
 
     const [text, settext] = useState("");
     const [date, setDate] = useState("");
-    const [priority, setPriority] = useState("Low");
+    const [priority, setPriority] = useState("");
 
     const handleadd = () => {
         if (!text.trim()) return;
@@ -17,14 +17,14 @@ function Taskinput() {
             type: "ADD_TASK",
             payload: {
                 text: text,
-                priority: "Low",
+                priority: priority,
                 date: new Date().toLocaleDateString()
             }
         });
 
         settext("");
         setDate("");
-        setPriority("Low");
+        setPriority("low");
     };
 
     return (
@@ -32,8 +32,7 @@ function Taskinput() {
             style={{
                 background: setting.darkmode ? "#000" : "#fff",
                 color: setting.darkmode ? "#fff" : "#000",
-            }}
-        >
+            }}>
             <input
                 type="text"
                 value={text}
