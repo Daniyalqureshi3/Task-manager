@@ -1,9 +1,9 @@
-import { createContext, useContext, useReducer } from "react";
+import { createContext, useContext, useReducer, useEffect } from "react";
 
 const Taskcontext = createContext();
 
 const initialstate = {
-  task: [],
+  task: JSON.parse(localStorage.getItem("task")) || []
 };
 
 const reducer = (state, action) => {
@@ -51,6 +51,10 @@ const reducer = (state, action) => {
 
 export const Taskprovider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialstate);
+
+      useEffect(() => {
+      localStorage.setItem("task", JSON.stringify(state.task));
+    }, [state.task]);
 
   return (
     <Taskcontext.Provider value={{ state, dispatch }}>
