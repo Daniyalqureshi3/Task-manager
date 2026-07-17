@@ -1,0 +1,75 @@
+.task-input {
+  width: 90%;
+  max-width: 1000px;
+  margin: 30px auto;
+  padding: 20px;
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+  transition: 0.3s;
+}
+
+.task-input.light {
+  background: #ffffff;
+  color: #222;
+}
+
+.task-input.dark {
+  background: #111827;
+  color: #ffffff;
+}
+
+.task-input input,
+.task-input select {
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  outline: none;
+  font-size: 15px;
+  flex: 1;
+  min-width: 180px;
+}
+
+.task-input.dark input,
+.task-input.dark select {
+  background: #1f2937;
+  color: white;
+  border: 1px solid #374151;
+}
+
+.task-input.light input,
+.task-input.light select {
+  background: white;
+  color: black;
+}
+
+.task-input button {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  background: #7c3aed;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.task-input button:hover {
+  background: #6d28d9;
+}
+
+@media (max-width: 768px) {
+  .task-input {
+    flex-direction: column;
+  }
+
+  .task-input input,
+  .task-input select,
+  .task-input button {
+    width: 100%;
+  }
+}

@@ -30,10 +30,7 @@ function Taskinput() {
 
     return (
         <div
-            style={{
-                background: setting.darkmode ? "#000" : "#fff",
-                color: setting.darkmode ? "#fff" : "#000",
-            }}>
+            className={`task-input ${setting.darkmode ? "dark" : "light"}`}>
             <input
                 type="text"
                 value={text}
