@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { usetask } from "../context/Taskcontext";
 import { usetheme } from "../context/Toggletheme";
+import "./Input.css"
 
 function Taskinput() {
     const { dispatch } = usetask();
