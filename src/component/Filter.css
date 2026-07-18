@@ -1,0 +1,68 @@
+.task-button {
+  width: 90%;
+  max-width: 600px;
+  margin: 20px auto;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  padding: 15px;
+  border-radius: 12px;
+  transition: 0.3s;
+}
+
+.task-button.light {
+  background: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.task-button.dark {
+  background: #111827;
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.08);
+}
+
+.task-button button {
+  flex: 1;
+  padding: 12px 18px;
+  border: none;
+  border-radius: 8px;
+  background: #7c3aed;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.task-button button:hover {
+  background: #6d28d9;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(124, 58, 237, 0.35);
+}
+
+.task-button button:active {
+  transform: scale(0.97);
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  .task-button {
+    width: 95%;
+    gap: 10px;
+  }
+
+  .task-button button {
+    font-size: 14px;
+    padding: 10px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .task-button {
+    flex-direction: column;
+  }
+
+  .task-button button {
+    width: 100%;
+  }
+}

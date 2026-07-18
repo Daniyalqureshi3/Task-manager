@@ -1,7 +1,5 @@
 .navbar {
   height: 75px;
-  
-  
   display: flex;
   justify-content: space-between; 
   align-items: center;
@@ -46,7 +44,7 @@
   transform: translateY(-2px);
   box-shadow: 0 6px 15px rgba(124, 58, 237, 0.4);
 }
-/* Tablet */
+
 @media (max-width: 768px) {
   .navbar {
     padding: 0 20px;
@@ -63,7 +61,7 @@
   }
 }
 
-/* Mobile */
+
 @media (max-width: 480px) {
   .navbar {
     padding: 15px;

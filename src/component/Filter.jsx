@@ -1,15 +1,13 @@
 import React from 'react'
 import { usetheme } from '../context/Toggletheme'
 import { useFilter } from '../context/Filtercontext';
+import './Filter.css'
 
 function Filter() {
     const{state:setting} =usetheme();
     const {state, dispatch} = useFilter();
   return (
-    <div style={{
-        background: setting.darkmode ? "#000" : "#fff",
-        color: setting.darkmode  ? "#fff" : "#000",
-      }}>
+    <div className={`task-button ${setting.darkmode ? "dark" : "light"}`}>
         <button onClick={()=> dispatch({
         type:"SET_FILTER", payload:"ALL"
       })}>ALL</button>
