@@ -1,9 +1,9 @@
-import { createContext, useContext, useReducer } from "react";
+import { createContext, useContext, useEffect, useReducer } from "react";
 
 const Filtercontext = createContext();
 
 const initialstate ={
-    filter:"ALL"
+    filter: JSON.parse(localStorage.getItem("filter")) || "ALL"
 }
 
 const reducer=(state, action)=>{
@@ -19,6 +19,10 @@ const reducer=(state, action)=>{
 
 export const Filterprovider =({children})=>{
 const[state, dispatch]=useReducer (reducer, initialstate)
+useEffect(()=>{
+    localStorage.setItem("filter", JSON.stringify(state.filter));
+},[state.filter]);
+
 return(
     <Filtercontext.Provider value={{state, dispatch}}>
         {children}

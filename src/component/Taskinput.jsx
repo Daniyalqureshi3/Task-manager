@@ -19,7 +19,8 @@ function Taskinput() {
             payload: {
                 text: text,
                 priority: priority,
-                date: new Date().toLocaleDateString()
+
+                date: date,
             }
         });
 

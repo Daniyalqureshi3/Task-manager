@@ -43,7 +43,7 @@
   transform: scale(0.97);
 }
 
-/* Tablet */
+
 @media (max-width: 768px) {
   .task-button {
     width: 95%;
@@ -56,7 +56,7 @@
   }
 }
 
-/* Mobile */
+
 @media (max-width: 480px) {
   .task-button {
     flex-direction: column;

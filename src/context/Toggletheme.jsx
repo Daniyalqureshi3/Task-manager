@@ -1,10 +1,10 @@
-import { Children, createContext, useContext, useReducer } from "react";
+import { Children, createContext, useContext, useEffect, useReducer } from "react";
 
 
 const Toggletheme = createContext();
 
 const initialstate={
- darkmode:true,
+ darkmode: JSON.parse(localStorage.getItem("darkmode")) || false,
 }
 
 const reducer=(state, action)=>{
@@ -19,6 +19,10 @@ const reducer=(state, action)=>{
 }
 export const Toggleprovider=({children}) => {
 const [state, dispatch] = useReducer(reducer, initialstate)
+useEffect(() => {
+  localStorage.setItem("darkmode", JSON.stringify(state.darkmode));
+}, [state.darkmode]);
+
 return(
     <Toggletheme.Provider value={{state, dispatch}}>
         {children}
