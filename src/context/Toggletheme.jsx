@@ -1,6 +1,4 @@
 import { Children, createContext, useContext, useEffect, useReducer } from "react";
-
-
 const Toggletheme = createContext();
 
 const initialstate={
